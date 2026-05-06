@@ -12,21 +12,31 @@ form.addEventListener('submit', function (e){
     let cidade = document.getElementById('cidade').value;
     let estado = document.getElementById('estado').value;
 
+     let erroNome = document.getElementById('nome').value;
+    let erroEmail = document.getElementById('email').value;
+    let erroIdade = document.getElementById('idade').value;
+    let erroPeso = document.getElementById('peso').value;
+    let erroSangue = document.getElementById('sangue').value;
+    let erroTelefone = document.getElementById('telefone').value;
+    let erroCidade = document.getElementById('cidade').value;
+    let erroEstado = document.getElementById('estado').value;
+
+
    
            if(nome.split (" ").length < 2){
-            return erro("Informe nome e sobrenome")
+            document.getElementById('erroNome').textContent = "Informe nome e sobrenome"
            }
             if (!email.includes('@')) {
-                return erro("Email Invalido")
+                 document.getElementById('erroEmail').textContent = "Email Invalido"
             }
             if(idade <16){
-                return erro("Idade minima é 16 anos ")
+                document.getElementById('erroIdade').textContent = "Idade minima é 16 anos"
             }
             if(peso < 50){
-                return erro("Peso minimo é 50")
+                document.getElementById('erroPeso').textContent = 'Peso minimo é 50 kilos'
             }
             if(!nome || !email || !idade || !peso || !sangue || !telefone || !cidade || !estado){
-                return erro ("Preencha todos os campos")
+                return alert ("Preencha todos os campos")
             }
 
             switch (sangue){
